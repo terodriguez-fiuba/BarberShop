@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blackstone Barbers
 
-## Getting Started
+Sitio de barbería con Next.js, catálogo fotográfico y diseño adaptable a celulares.
 
-First, run the development server:
+## Desarrollo
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir http://localhost:3000. Validar con `npm run lint` y `npm run build`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Datos del local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+La ubicación y el perfil `@barber_liooo` ya están conectados. El enlace recibido corresponde a Tupac Barbershop; la identidad visual conserva el nombre Blackstone del proyecto. Dirección verificada en https://tupacbarbershop.setmore.com/. Los horarios se consultan por Instagram.
 
-## Learn More
+Editar `src/lib/shop.ts`:
 
-To learn more about Next.js, take a look at the following resources:
+- `instagramUrl`: URL completa del perfil real de Instagram. Activa los botones del catálogo y de contacto.
+- `address`: dirección completa, incluyendo ciudad y país.
+- `mapsUrl`: enlace compartido de la ubicación en Google Maps. Si se deja vacío y hay dirección, se genera un enlace de búsqueda por dirección.
+- `mapsEmbedUrl`: abrir la ubicación en Google Maps → Compartir → Insertar un mapa → copiar solamente la URL del atributo `src` del iframe. Activa el mapa integrado. Un enlace corto de Maps no sirve como URL de iframe.
+- `hours`: horarios reales de atención.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Hasta completar los datos, la página muestra avisos de próxima disponibilidad. No utiliza un perfil ni una dirección ficticios. El mapa muestra la ubicación configurada; no solicita la geolocalización del visitante ni sincroniza horarios o reseñas automáticamente.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Fotografías
 
-## Deploy on Vercel
+Las cuatro fotografías proporcionadas están en `public/images/` y se importan con `next/image`, que genera versiones optimizadas según el tamaño de pantalla:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `barberia.jpg`: fondo de portada y sección de ubicación mientras no haya mapa.
+- `peinado.jpg`: sección Nosotros y catálogo.
+- `corte-clasico.jpg`: catálogo.
+- `perfilado.jpg`: catálogo.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Para modificar textos o añadir estilos al catálogo, editar `src/components/Gallery.tsx`. Los servicios están en `src/components/Services.tsx`. No se publican precios hasta contar con valores confirmados.
