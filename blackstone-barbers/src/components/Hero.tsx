@@ -7,7 +7,7 @@ export default function Hero() {
     <div className="hero-shade" />
     <div className="container hero-content">
       <p className="eyebrow"><span className="short-line" /> EL OFICIO DE VERTE BIEN</p>
-      <h1 id="hero-title">Un buen corte.<br />Una <em>actitud.</em></h1>
+      <h1 id="hero-title">Un buen corte.</h1>
       <p className="hero-description">Barbería clásica, estilo propio. Cortes, barbas y detalles que hacen la diferencia.</p>
       <div className="hero-actions"><a className="button" href="#contact">Encontrá tu próximo look <span aria-hidden="true">↗</span></a><a className="text-link" href="#gallery">Explorá el catálogo <span aria-hidden="true">→</span></a></div>
     </div>
